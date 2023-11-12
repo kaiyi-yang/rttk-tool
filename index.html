@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakuten Ticket tool</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+<body>
+    <header>
+        <button class="menu">&#9776;</button>
+        <h1 style="color: white;">Rakuten Ticket tool</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="https://www.nogizaka46.com/">Nogizaka Official</a></li>
+                <li><a href="https://www.nogizaka46.com/s/n46/diary/MEMBER">Nogizaka Blog</a></li>
+                <li><a href="https://sp.nogizaka46.com/">Nogizaka Mobile</a></li>
+            </ul>
+        </nav>
+        <style>
+            header {
+                background-color: black !important;
+                height: 80px !important;
+                width: 100% !important;
+            }
+
+            header ul {
+                position:absolute;
+                right:5vw;
+                top:0;
+                line-height:80px;
+            }
+
+            h1 {
+                color: white !important;
+                position:absolute;
+                left:80px;
+                top:0;
+                line-height: 80px; 
+            }
+
+            header a{
+                color: white;
+                text-decoration: none;
+            }
+
+            head a:hover{
+                text-decoration: underline;
+            }
+
+            header li {
+                display:inline;
+                margin-right:4vw;    
+            }
+        </style>
+    </header>
+    
+
+    <main>
+        <br>
+        <section class="up" style="text-align: center;">
+            <h2 >楽天チケット自動入力</h2>
+            <p>請手動選擇場次、張數、付款方式</p>
+        </section>
+
+        <section>
+            <form id="form" class="form">
+
+                <div>
+                        <!-- <select name="stockType-0" data-wishOrder="0" class="stock-type-select">
+                        <option value="163881">全席指定</option>
+                        </select> -->
+                </div>
+
+                <div>
+                    <label for="last_name">姓</label> <input id="last_name" name="last_name" type="text" value="">
+                    (例：山田)
+                </div>
+
+                <div>
+                    <label for="first_name">名</label> <input id="first_name" name="first_name" type="text" value="">
+                    (例：太郎)
+                </div>
+
+                <div>
+                    <label for="last_name_kana">姓(カナ)</label> <input id="last_name_kana" name="last_name_kana" type="text" value="">
+                    (例：ヤマダ)
+                </div>
+
+                <div>
+                    <label for="first_name_kana">名(カナ)</label> <input id="first_name_kana" name="first_name_kana" type="text" value="">
+                    (例：タロウ)
+                </div>
+
+                <div>
+                    <label for="email_1">メールアドレス</label>
+                    <input id="email_1" name="email_1" type="text" value="" style="width: 8em">
+                    (例：mail@example.ne.jp)
+                </div>
+
+                <div>
+                    <label for="email_1_confirm">確認用</label>
+                    <input id="email_1_confirm" name="email_1_confirm" type="text" value="">
+                    (例：mail@example.ne.jp)
+                </div>
+
+                <div>
+                    <label for="zip">郵便番号</label>
+                    <input id="zip" name="zip" onKeyUp="AjaxZip3.zip2addr('//tstar.s3.amazonaws.com/cart/static/js/zipdata', 'zip','','prefecture','city','', 'address_1');" type="text" value="">
+                    (例: 1030001)
+                </div>
+
+                <div>
+                    <label for="prefecture">都道府県</label>
+                    <select id="prefecture" name="prefecture"><option value="東京都">東京都</option><option value="青森県">青森県</option><option value="岩手県">岩手県</option><option value="宮城県">宮城県</option><option value="秋田県">秋田県</option><option value="山形県">山形県</option><option value="福島県">福島県</option><option value="茨城県">茨城県</option><option value="栃木県">栃木県</option><option value="群馬県">群馬県</option><option value="埼玉県">埼玉県</option><option value="千葉県">千葉県</option><option value="東京都">東京都</option><option value="神奈川県">神奈川県</option><option value="新潟県">新潟県</option><option value="富山県">富山県</option><option value="石川県">石川県</option><option value="福井県">福井県</option><option value="山梨県">山梨県</option><option value="長野県">長野県</option><option value="岐阜県">岐阜県</option><option value="静岡県">静岡県</option><option value="愛知県">愛知県</option><option value="三重県">三重県</option><option value="滋賀県">滋賀県</option><option value="京都府">京都府</option><option value="大阪府">大阪府</option><option value="兵庫県">兵庫県</option><option value="奈良県">奈良県</option><option value="和歌山県">和歌山県</option><option value="鳥取県">鳥取県</option><option value="島根県">島根県</option><option value="岡山県">岡山県</option><option value="広島県">広島県</option><option value="山口県">山口県</option><option value="徳島県">徳島県</option><option value="香川県">香川県</option><option value="愛媛県">愛媛県</option><option value="高知県">高知県</option><option value="福岡県">福岡県</option><option value="佐賀県">佐賀県</option><option value="長崎県">長崎県</option><option value="熊本県">熊本県</option><option value="大分県">大分県</option><option value="宮崎県">宮崎県</option><option value="鹿児島県">鹿児島県</option><option value="沖縄県">沖縄県</option></select>
+                    (例: 東京都)
+                </div>
+
+                <div>
+                    <label for="city">市区町村</label>
+                    <input id="city" name="city" type="text" value="">
+                    (例: 中央区)
+                </div>
+
+                <div>
+                    <label for="address_1">町名番地</label>
+                    <input id="address_1" name="address_1" style="width: 15em" type="text" value="">
+                    (例: 日本橋x-xx-xx)
+                </div>
+
+                <div>
+                    <label for="address_2">建物名等</label>
+                    <input id="address_2" name="address_2" style="width: 15em" type="text" value="">
+                    (例: yyビルz階)
+                </div>
+
+                <div>
+                    <label for="tel_1">電話番号</label>
+                    <input id="tel_1" name="tel_1" type="text" value="">
+                    (例: 080xxxxyyyy)
+                </div>
+
+                <div>
+                    <label for="datetimewidget-container">生年月日</label>
+                    <span class="datetimewidget-container"><span class="datetimewidget-year"><select class="datetimewidget-year" id="birthday.year" name="birthday.year" placeholder=""><option value="1900">1900</option><option value="1901">1901</option><option value="1902">1902</option><option value="1903">1903</option><option value="1904">1904</option><option value="1905">1905</option><option value="1906">1906</option><option value="1907">1907</option><option value="1908">1908</option><option value="1909">1909</option><option value="1910">1910</option><option value="1911">1911</option><option value="1912">1912</option><option value="1913">1913</option><option value="1914">1914</option><option value="1915">1915</option><option value="1916">1916</option><option value="1917">1917</option><option value="1918">1918</option><option value="1919">1919</option><option value="1920">1920</option><option value="1921">1921</option><option value="1922">1922</option><option value="1923">1923</option><option value="1924">1924</option><option value="1925">1925</option><option value="1926">1926</option><option value="1927">1927</option><option value="1928">1928</option><option value="1929">1929</option><option value="1930">1930</option><option value="1931">1931</option><option value="1932">1932</option><option value="1933">1933</option><option value="1934">1934</option><option value="1935">1935</option><option value="1936">1936</option><option value="1937">1937</option><option value="1938">1938</option><option value="1939">1939</option><option value="1940">1940</option><option value="1941">1941</option><option value="1942">1942</option><option value="1943">1943</option><option value="1944">1944</option><option value="1945">1945</option><option value="1946">1946</option><option value="1947">1947</option><option value="1948">1948</option><option value="1949">1949</option><option value="1950">1950</option><option value="1951">1951</option><option value="1952">1952</option><option value="1953">1953</option><option value="1954">1954</option><option value="1955">1955</option><option value="1956">1956</option><option value="1957">1957</option><option value="1958">1958</option><option value="1959">1959</option><option value="1960">1960</option><option value="1961">1961</option><option value="1962">1962</option><option value="1963">1963</option><option value="1964">1964</option><option value="1965">1965</option><option value="1966">1966</option><option value="1967">1967</option><option value="1968">1968</option><option value="1969">1969</option><option value="1970">1970</option><option value="1971">1971</option><option value="1972">1972</option><option value="1973">1973</option><option value="1974">1974</option><option value="1975">1975</option><option value="1976">1976</option><option value="1977">1977</option><option value="1978">1978</option><option value="1979">1979</option><option value="1980" selected="selected">1980</option><option value="1981">1981</option><option value="1982">1982</option><option value="1983">1983</option><option value="1984">1984</option><option value="1985">1985</option><option value="1986">1986</option><option value="1987">1987</option><option value="1988">1988</option><option value="1989">1989</option><option value="1990">1990</option><option value="1991">1991</option><option value="1992">1992</option><option value="1993">1993</option><option value="1994">1994</option><option value="1995">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option><option value="2002">2002</option><option value="2003">2003</option><option value="2004">2004</option><option value="2005">2005</option><option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option></select><span class="datetimewidget-label">年</span></span><span class="datetimewidget-month"><select class="datetimewidget-month" id="birthday.month" name="birthday.month" placeholder=""><option selected="selected">1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option></select><span class="datetimewidget-label">月</span></span><span class="datetimewidget-day"><select class="datetimewidget-day" id="birthday.day" name="birthday.day" placeholder=""><option selected="selected">1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option></select><span class="datetimewidget-label">日</span></span></span>
+                </div>
+
+                <div>
+                    <label for="sex">性別</label>
+                    <input id="sex-sex-0" name="sex" type="radio" value="false" onclick="radioBoy(this);"> <label field_id="sex-sex-0" for="sex-0">男性
+                    <input checked id="sex-sex-1" name="sex" type="radio" value="true" onclick="radioGirl(this)"> <label field_id="sex-sex-1" for="sex-1">女性
+                </div>
+
+                <div>
+                    <label class="checkbox-set-item" for="申込時の注意事項等.0">
+                    <input id="申込時の注意事項等.0" type="checkbox" value="true" /> 確認・了承しました</label>
+                </div>
+
+                <div>
+                    <label for="申込者名・姓(来場代表者苗字)">申込者名・姓(来場代表者苗字)</label>
+                    <input id="申込者名・姓(来場代表者苗字)" name="extra.申込者名・姓(来場代表者苗字)" type="text" value="">
+                </div>
+
+                <div>
+                    <label for="申込者名・名"><label for="申込者名・名">申込者名・名</label>
+                    <input id="申込者名・名" name="extra.申込者名・名" type="text" value="">
+                </div>
+
+                <div>
+                    <label for="申込者電話番号(半角・ハイフン不要)"><label for="申込者電話番号(半角・ハイフン不要)">申込者電話番号(半角・ハイフン不要)</label>
+                    <input id="申込者電話番号(半角・ハイフン不要)" name="extra.申込者電話番号(半角・ハイフン不要)" type="text" value="">
+                </div>
+
+                <div>
+                    <label for="同行者・姓"><label for="同行者・姓">同行者・姓</label>
+                    <input id="同行者・姓" name="extra.同行者・姓" type="text" value="">
+                    (例：なし)
+                </div>
+
+                <div>
+                    <label for="同行者名・名"><label for="同行者名・名">同行者名・名</label>
+                    <input id="同行者名・名" name="extra.同行者名・名" type="text" value="">
+                    (例：なし)
+                </div>
+
+                <div>
+                    <label for="同行者電話番号(半角・ハイフン不要)"><label for="同行者電話番号(半角・ハイフン不要)">同行者電話番号(半角・ハイフン不要)</label>
+                    <input id="同行者電話番号(半角・ハイフン不要)" name="extra.同行者電話番号(半角・ハイフン不要)" type="text" value="" style="width: 8em">
+                    (例：1)
+                </div>
+
+                <div>
+                    <label for="同行者住所"><label for="同行者住所">同行者住所</label>
+                    <input id="同行者住所" name="extra.同行者住所" type="text" value="">
+                    (例：1)
+                </div>
+
+                <div>
+                    <label for="同行者メールアドレス"><label for="同行者メールアドレス">同行者メールアドレス</label>
+                    <input id="同行者メールアドレス" name="extra.同行者メールアドレス" type="text" value="">
+                    (例：1)
+                </div>
+
+                <div>
+                    <label for="最終確認"><label for="最終確認">最終確認</label>
+                    <input id="最終確認.0" name="extra.最終確認" type="checkbox" value="true" /> 確認・了承しました
+                </div>
+
+                <div>
+                    <label for="review_password">受付確認用パスワード</label><span class="notice-label"> ※必須</span>
+                    <input id="review_password" name="review_password" type="text" value="">
+                </div><br><br>
+
+
+                
+            </form>
+
+            <style>
+                .form{text-align: center;}
+            </style>
+
+    
+        </section>
+
+
+        <section class="row align-content-center">
+            <!-- <button type="button" class="btn btn-primary" onclick="processFormData();">確認</button> -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="processFormData();">確認</button>
+        </section>
+
+
+    </main>
+
+    <footer style="text-align: center;">
+        <br>
+        <p>Copyright © 2023 kai.    <a href="https://github.com/kaiyi-yang">GitHub</a></p>
+    </footer>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">使用教學</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>確認書籤列是否存在</h5>
+                    Windows: Ctrl + Shift + B<br>
+                    macOS: Command + Shift + B<br>
+                    <br>
+                    <h5>拖曳建立書籤</h5>
+                    按著下面的「產生書籤」按鈕不放，拖曳到上方「書籤列」。<br>
+                    <br>
+                    <h5>使用教學</h5>
+                    請至樂天抽票頁面，接著點選書籤列的按鈕，即可自動填入。<br>
+                    ※ 註：場次、張數、付款方式需手動選擇。<br>
+                    <br>
+                    <section class="text-center">
+                        <a href="" id="button" class="btn btn-primary">產生書籤</a>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    
+</body>
+
+
+</html>
+<!-- reference by https://github.com/shouko/rtkt-autofill/tree/gh-pages -->
